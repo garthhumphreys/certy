@@ -24,7 +24,7 @@ func main() {
 	}
 
 	if *domainPtr != "" {
-		fmt.Println("site:", *domainPtr)
+		// fmt.Println("site:", *domainPtr, "\n")
 		certSearch(*domainPtr)
 	} else {
 		flag.PrintDefaults()
@@ -35,7 +35,7 @@ func main() {
 func certSearch(domain string) {
 	// domain := "example.com"
 	url := fmt.Sprintf("https://crt.sh/?q=%s.%s&output=json", "%", domain)
-	fmt.Println("URL:", url)
+	// fmt.Println("URL:", url)
 
 	resp, err := http.Get(url)
 	if err != nil {
@@ -44,7 +44,7 @@ func certSearch(domain string) {
 	}
 	defer resp.Body.Close()
 
-	fmt.Println("RESP:", resp)
+	// fmt.Println("RESP:", resp)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		fmt.Println("Error:", err)
