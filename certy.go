@@ -65,12 +65,4 @@ func certSearch(domain string) {
 			fmt.Println(certificate.NameValue)
 		}
 	}
-
-	// prettyJSON, err := json.MarshalIndent(data, "", "  ")
-	// if err != nil {
-	// 	fmt.Println("Error:", err)
-	// 	return
-	// }
-	//
-	// fmt.Println(string(prettyJSON))
 }
